@@ -22,8 +22,8 @@ model User {
   email String @unique
   password String
   role UserRole
-  rquirePasswordChange Boolean
-  profileStaus UserStatus
+  rquirePasswordChange Boolean @default(true)
+  profileStaus UserStatus @default(ACTIVE)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   Admin Admin?
@@ -54,7 +54,7 @@ model Admin {
   email String @unique
   profilePhoto String?
   contactNumber String
-  isDeleted Boolean
+  isDeleted Boolean @default(false)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
