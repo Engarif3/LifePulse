@@ -30,6 +30,7 @@ const getAllAdminFromDB = async (params: any) => {
   }
 
   const whereConditions: Prisma.AdminWhereInput = { AND: andConditions };
+
   const result = await prisma.admin.findMany({
     where: whereConditions,
   });
